@@ -1,0 +1,37 @@
+.people-page {
+  background: var(--surface-base);
+  min-height: 100vh;
+}
+
+.people-nav {
+  padding: 0;
+}
+
+.people-feed {
+  padding: 16px 8px 24px;
+}
+
+.people-sidebar {
+  padding: 16px 16px 24px 8px;
+}
+
+.sidebar-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 12px;
+}
+
+.sidebar-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 12px;
+}
+
+.sidebar-empty {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  margin: 0;
+}

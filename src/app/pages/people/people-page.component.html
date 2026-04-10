@@ -1,13 +1,20 @@
 
-<div class="container-fluid">
-    <div class="row bg-light">
-        <div class="col-md-1">
-            <navbar-left></navbar-left>
-        </div>
-
-        <div class="col-md-6 offset-md-2">
-            <header-people></header-people>
-            <posts-people></posts-people>
-        </div>
+<div class="container-fluid people-page">
+  <div class="row">
+    <div class="col-md-1 people-nav">
+      <navbar-left></navbar-left>
     </div>
+
+    <div class="col-md-7 people-feed">
+      <header-people></header-people>
+      <posts-people></posts-people>
+    </div>
+
+    <div class="col-md-4 people-sidebar">
+      <div class="sidebar-panel">
+        <h6 class="sidebar-title">People you may know</h6>
+        <p class="sidebar-empty">Suggestions will appear here</p>
+      </div>
+    </div>
+  </div>
 </div>

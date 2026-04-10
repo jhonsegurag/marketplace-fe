@@ -1,51 +1,36 @@
-<div class="container-fluid header-people-container px-5 py-1">
-    <div class="row">
-        <div class="offset-md-1 col-md-10">
-    <div class="profile-user-container bg-white border rounded-3 shadow-sm decorator-profile py-3">
-        <div class="offset-md-3 col-md-6">
-            <div class="row py-1">
-                <div class="col-md-12">
-                    <div class="avatar-profile">
-                        <img src="{{url + 'get-image-user/' + identity.image}}" alt="" *ngIf="identity.image">
-                        <img src="assets/user.png" *ngIf="!identity.image"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row py-1">
-                <div class="col-md-12">
-                    <h5 class="text-center"> {{ identity.name + ' ' + identity.surname }}</h5>
-                </div>
-            </div>
-            <div class="row py-1">
-                <div class="col-md-12">
-                    <h6 class="text-center"> {{ identity.nick }}</h6>
-                </div>
-            </div>
-            <div class="row py-1">
-                <div class="col-md-4">
-                    <h6 class="text-center"> 1K Followers </h6>
-                </div>
-                <div class="col-md-4">
-                    <h6 class="text-center"> 10 Following </h6>
-                </div>
-                <div class="col-md-4">
-                    <h6 class="text-center"> 10 Posts </h6>
-                </div>
-            </div>
-            <div class="row py-1">
-                <div class="col-md-12">
-                    <p class="text-center description"> I'm nickname, I'm passionate to travel to world </p>
-                </div>
-            </div>
-            <div class="row py-1">
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                    <a type="button" class="btn btn-primary btn-lg">Follow</a>
-                    <a type="button" class="btn btn-outline-secondary btn-lg">Mesagge</a>
-                </div>
-            </div>
-        </div>
-    </div>
-        </div>
-    </div>
-</div>
+<div class="header-people-container px-5 py-1">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+      <div class="profile-card">
 
+        <div class="cover-band"></div>
+
+        <div class="profile-body">
+          <div class="avatar-wrapper">
+            <img src="{{url + 'get-image-user/' + identity.image}}" alt="" *ngIf="identity.image">
+            <img src="assets/user.png" *ngIf="!identity.image" />
+          </div>
+
+          <h5 class="fullname">{{ identity.name + ' ' + identity.surname }}</h5>
+          <span class="nick">{{ identity.nick }}</span>
+
+          <div class="stats-row">
+            <div class="stat-unit">
+              <span class="stat-number">{{stats?.following ?? 0}}</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="stat-unit">
+              <span class="stat-number">{{stats?.followed ?? 0}}</span>
+              <span class="stat-label">Following</span>
+            </div>
+            <div class="stat-unit">
+              <span class="stat-number">{{stats?.publications ?? 0}}</span>
+              <span class="stat-label">Posts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

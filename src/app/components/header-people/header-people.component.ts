@@ -11,10 +11,12 @@ import {GLOBAL} from '../../services/global';
 export class HeaderPeopleComponent {
 
   public identity;
+  public stats;
   public url: string
 
   constructor( private userService: UserService) {
     this.identity = this.userService.getIdentity();
+    this.stats = this.userService.getStats();
     this.url = GLOBAL.url;
   }
 
