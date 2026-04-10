@@ -1,70 +1,176 @@
-
-
-.posts-timeline-container{
-    
+.posts-timeline-container {
+  padding-bottom: 24px;
 }
 
-.post-timeline {
-    background-color: #FEFEFE ;
-    border-radius: 8px;
-    box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    margin-top: 15px;
+.post-card {
+  background: var(--surface-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  padding: 16px 20px;
+  margin-top: 12px;
+}
 
-    .post-timeline-header{
-        padding: 15px;
+.post-author {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
 
-        .avatar-profile{
-            width: 50px;
-            height: 50px;
-        }
-    
-        .avatar-profile img{
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-        .avatar-fullname{
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
 
-        }
+.avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .menu-actions{
+.author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  text-decoration: none;
+  display: block;
+  transition: color 0.15s;
+}
 
-        }
+.author-name:hover {
+  color: var(--brand);
+}
 
-        .text{
-            margin-top: 10px;
-        }
-    }
+.post-time {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
 
-    .post-timeline-content{
-        padding: 15px;
-    }
+.post-menu-btn {
+  background: none;
+  border: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+  margin: 0;
+}
 
-    .post-timeline-footer{
-        padding: 15px;
+.post-menu-btn:hover {
+  background: var(--brand-muted);
+  color: var(--brand);
+}
 
-        .avatar-profile{
-            width: 50px;
-            height: 50px;
-        }
-    
-        .avatar-profile img{
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
+.post-text {
+  font-size: 0.9375rem;
+  color: var(--ink-primary);
+  line-height: 1.55;
+  margin: 0 0 14px;
+}
 
-        .action {
-            .action-icon{
-                color:#593EFF;
-            }
+.post-image {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
 
-            .counter-text {
-                margin-left: 5px;
-            }
-        }
+.post-image img {
+  width: 100%;
+  display: block;
+}
 
-    }
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--ink-secondary);
+  font-size: 0.8125rem;
+  transition: background 0.15s, color 0.15s;
+  margin: 0;
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+.action-btn:hover {
+  background: var(--brand-muted);
+  color: var(--brand);
+}
+
+.reply-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.reply-avatar {
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+}
+
+.reply-input {
+  flex: 1;
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 0.8125rem;
+  color: var(--ink-primary);
+  background: var(--surface-base);
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+}
+
+.reply-input:focus {
+  border-color: var(--brand);
+  background: var(--surface-card);
+}
+
+.see-more-btn {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 20px;
+  padding: 8px 24px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  transition: background 0.15s;
+}
+
+.see-more-btn:hover {
+  background: var(--brand-muted);
 }

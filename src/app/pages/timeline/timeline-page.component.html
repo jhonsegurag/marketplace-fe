@@ -1,14 +1,21 @@
 
-<div class="container-fluid">
-    <div class="row bg-light">
-        <div class="col-md-1">
-            <navbar-left></navbar-left>
-        </div>
-
-        <div class="col-md-6 offset-md-2">
-            <header-timeline></header-timeline>
-            <posts-publish></posts-publish>
-            <posts-timeline></posts-timeline>
-        </div>
+<div class="container-fluid timeline-page">
+  <div class="row">
+    <div class="col-md-1 timeline-nav">
+      <navbar-left></navbar-left>
     </div>
+
+    <div class="col-md-7 timeline-feed">
+      <header-timeline></header-timeline>
+      <posts-publish></posts-publish>
+      <posts-timeline></posts-timeline>
+    </div>
+
+    <div class="col-md-4 timeline-sidebar">
+      <div class="sidebar-panel">
+        <h6 class="sidebar-title">Suggested for you</h6>
+        <p class="sidebar-empty">Suggestions will appear here</p>
+      </div>
+    </div>
+  </div>
 </div>

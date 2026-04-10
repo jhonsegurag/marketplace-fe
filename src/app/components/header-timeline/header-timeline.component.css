@@ -1,46 +1,90 @@
+.header-timeline-container {
+  padding-bottom: 0 !important;
+}
 
-.header-timeline-container{
-    
-    .decorator-profile{
-        border-top:  25px solid#593EFF;
-    }
+.profile-card {
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  background: var(--surface-card);
+  margin-top: 12px;
+}
 
-    .profile-user-container {
-        
-        .avatar-profile{
-            margin: auto;
-            height: 100px;
-            width: 100px;
-            
-        }
-    
-        .avatar-profile img{
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
+.cover-band {
+  height: 80px;
+  background: linear-gradient(135deg, #593EFF 0%, #8B72FF 100%);
+}
 
-        .fullname {
-            color: #999999;
-        }
+.profile-body {
+  padding: 0 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.avatar-wrapper {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 3px solid var(--surface-card);
+  overflow: hidden;
+  margin-top: -38px;
+  background: #e0ddf8;
+  flex-shrink: 0;
+}
 
-    }
-    
-    
-    .information-user-container{
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.fullname {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 2px;
+}
 
-    
-        .title {
-            color: #B5B5B5;
-        }
-        
-    
-        .description {
-            color: #505050;
-        }
-    
-    }
-    
+.nick {
+  font-size: 0.8125rem;
+  color: var(--ink-secondary);
+}
+
+.stats-row {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+  margin-top: 16px;
+}
+
+.stat-unit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+  border-right: 1px solid var(--border-subtle);
+}
+
+.stat-unit:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }

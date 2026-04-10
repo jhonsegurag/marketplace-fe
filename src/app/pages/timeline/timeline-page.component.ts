@@ -4,6 +4,7 @@ import {UserService} from '../../services/user.service';
 @Component({
     selector: 'timeline-page',
     templateUrl: './timeline-page.component.html',
+    styleUrl: './timeline-page.component.css',
     providers: [UserService]
 })
 export class TimelinePageComponent implements OnInit {

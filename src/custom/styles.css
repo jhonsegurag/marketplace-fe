@@ -1,5 +1,17 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+:root {
+  --brand: #593EFF;
+  --brand-muted: rgba(89, 62, 255, 0.10);
+  --brand-soft: rgba(89, 62, 255, 0.15);
+  --surface-base: #F4F3FD;
+  --surface-card: #FFFFFF;
+  --border-subtle: rgba(89, 62, 255, 0.12);
+  --ink-primary: #0F0A24;
+  --ink-secondary: #6B6886;
+  --ink-muted: #A8A5BD;
+}
+
 .btn {
     border-radius: 30px;
 }

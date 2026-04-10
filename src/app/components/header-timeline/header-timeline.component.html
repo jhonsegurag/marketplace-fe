@@ -1,79 +1,36 @@
-<div class="container-fluid header-timeline-container px-5 py-1">
-    <div class="row">
-        <div class="offset-md-1 col-md-10">
-                <div class="profile-user-container bg-white border rounded-3 shadow-sm decorator-profile py-3">
-                    
-                            <div class="offset-md-3 col-md-6">
-                                <div class="row py-1">
-                                    <div class="col-md-12">
-                                        <div class="avatar-profile">
-                                            <img src="{{url + 'get-image-user/' + identity.image}}" alt="" *ngIf="identity.image">
-                                            <img src="assets/user.png" *ngIf="!identity.image"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row py-1">
-                                    <div class="col-md-12">
-                                        <h5 class="text-center fullname"> {{ identity.name + ' ' + identity.surname }}</h5>
-                                    </div>
-                                </div>
-                                <div class="row py-1">
-                                    <div class="col-md-12">
-                                        <h6 class="text-center"> {{ identity.nick }}</h6>
-                                    </div>
-                                </div>
-                                <div class="row py-1">
-                                    <div class="col-md-4">
-                                        <h6 class="text-center"> {{stats.following}} Followers </h6>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h6 class="text-center"> {{stats.followed}} Following </h6>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h6 class="text-center"> {{stats.publications}} Posts </h6>
-                                    </div>
-                                </div>
-                                <div class="row py-1">
-                                    <div class="col-md-12">
-                                        <p class="text-center description"> I'm nickname, I'm passionate to travel to world </p>
-                                    </div>
-                                </div>
-                            </div>
+<div class="header-timeline-container px-5 py-1">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+      <div class="profile-card">
 
-                </div>
-        </div>
-    </div>
+        <div class="cover-band"></div>
 
-        <!-- <div class="row py-3 information-user-container">
-            <div class="col-md-12">
-                <div class="row py-1">
-                    <div class="col-md-12">
-                        <h6 class="title"> About me </h6>
-                        <p class="description"> I'm nickname, I'm passionate to travel to world </p>
-                    </div>
-                </div>
-                <div class="row py-1">
-                    <div class="col-md-4">
-                        <h6 class="title"> Genero </h6>
-                        <p> Male </p>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="title"> Interestings </h6>
-                        <p> Software </p>
-                    </div>
-                </div>
-                <div class="row py-1">
-                    <div class="col-md-4">
-                        <h6 class="title"> Lenguages </h6>
-                        <p> English </p>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="title"> Location </h6>
-                        <p> Medellin, Colombia </p>
-                    </div>
-                </div>
+        <div class="profile-body">
+          <div class="avatar-wrapper">
+            <img src="{{url + 'get-image-user/' + identity.image}}" alt="" *ngIf="identity.image">
+            <img src="assets/user.png" *ngIf="!identity.image" />
+          </div>
+
+          <h5 class="fullname">{{ identity.name + ' ' + identity.surname }}</h5>
+          <span class="nick">{{ identity.nick }}</span>
+
+          <div class="stats-row">
+            <div class="stat-unit">
+              <span class="stat-number">{{stats.following}}</span>
+              <span class="stat-label">Followers</span>
             </div>
-        </div> -->
+            <div class="stat-unit">
+              <span class="stat-number">{{stats.followed}}</span>
+              <span class="stat-label">Following</span>
+            </div>
+            <div class="stat-unit">
+              <span class="stat-number">{{stats.publications}}</span>
+              <span class="stat-label">Posts</span>
+            </div>
+          </div>
+        </div>
 
-        
+      </div>
+    </div>
+  </div>
 </div>

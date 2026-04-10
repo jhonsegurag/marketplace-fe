@@ -1,114 +1,82 @@
-<div class="container-fluid posts-timeline-container px-5 py-1">
-    <div class="row">
-        <div class="offset-md-1 col-md-10">
-            <div id="publications">
-                <div class="post-timeline" *ngFor="let publication of publications">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="post-timeline-header">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <div class="avatar-profile pull-left">
-                                                    <a >
-                                                        <img src="{{url + 'get-image-user/' + publication.user.image}}" *ngIf="publication.user.image" />
-                                                        <img src="assets/user.png" class="avatar-default" *ngIf="!publication.user.image" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <div class="avatar-fullname pull-left">
-                                                    <a  [routerLink]="['/profile', publication.user._id]">
-                                                        {{publication.user.name + ' '+ publication.user.surname}}
-                                                    </a>
-                                                </div>
-                                                <div class="">
-                                                    Added 5 min ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-            
-                                        
-                                    </div>
-                                    <div class="col-md-6">
-        
-                                        <div class="float-end">
-                                            <div class="dropdown">
-                                                <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                  <li><a class="dropdown-item" href="#">Action 0</a></li>
-                                                  <li><a class="dropdown-item" href="#">Action n</a></li>
+<div class="posts-timeline-container px-5">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
 
-                                                </ul>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <h6 class="text">
-                                    {{publication.text}}
-                                </h6>
+      <div id="publications">
+        <div class="post-card" *ngFor="let publication of publications">
 
-                            </div>
-                            
-                            <div class="post-timeline-content">
-                                <div class="col-md-12" *ngIf="publication?.file != 'null'">
-                                    <img class="img-fluid" src="{{ url + 'get-image-pub/' + publication?.file }}"/>
-                                </div>
-                            </div>
-                            
-                            <div class="post-timeline-footer">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-2 action">
-                                                <i class="bi bi-heart action-icon"></i> <span class="counter-text">99</span>
-                                            </div>
-                                            <div class="col-md-2 action">
-                                                <i class="bi bi-chat action-icon"></i><span class="counter-text">50</span>
-                                            </div>
-                                            <div class="col-md-2 action">
-                                                <i class="bi bi-bookmark action-icon"></i><span class="counter-text">10</span>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="row py-2">
-                                        <div class="col-md-2">
-                                            <div class="avatar-profile pull-left">
-                                                <a >
-                                                    <img src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image" />
-                                                    <img src="assets/user.png" class="avatar-default" *ngIf="!identity.image" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="col-md-12">
-                                                <textarea name="text"  class="form-control" required></textarea>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+          <!-- Author row -->
+          <div class="post-author">
+            <div class="author-info">
+              <div class="avatar-sm">
+                <img src="{{url + 'get-image-user/' + publication.user.image}}" *ngIf="publication.user.image" />
+                <img src="assets/user.png" *ngIf="!publication.user.image" />
+              </div>
+              <div>
+                <a class="author-name" [routerLink]="['/profile', publication.user._id]">
+                  {{publication.user.name + ' ' + publication.user.surname}}
+                </a>
+                <div class="post-time">5 min ago</div>
+              </div>
             </div>
-            <div class="col-lg-12 text-center" *ngIf="publications && publications.length">
-                <p>
-                    <button class="btn btn-primary btn" (click)="viewMore()" *ngIf="!noMore">
-                        See more posts
-                    </button>
-                </p>
+            <div class="dropdown">
+              <button
+                class="post-menu-btn"
+                [id]="'menu-' + publication._id"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-three-dots-vertical"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" [attr.aria-labelledby]="'menu-' + publication._id">
+                <li><a class="dropdown-item text-danger" style="cursor:pointer" (click)="deletePublication(publication._id)">Delete</a></li>
+              </ul>
             </div>
+          </div>
+
+          <!-- Post text -->
+          <p class="post-text">{{publication.text}}</p>
+
+          <!-- Post image -->
+          <div class="post-image" *ngIf="publication?.file != 'null'">
+            <img class="img-fluid" src="{{ url + 'get-image-pub/' + publication?.file }}" />
+          </div>
+
+          <!-- Actions -->
+          <div class="post-actions">
+            <button class="action-btn">
+              <i class="bi bi-heart"></i>
+              <span>99</span>
+            </button>
+            <button
+              class="action-btn"
+              (click)="showReplyFor = showReplyFor === publication._id ? null : publication._id"
+            >
+              <i class="bi bi-chat"></i>
+              <span>50</span>
+            </button>
+            <button class="action-btn">
+              <i class="bi bi-bookmark"></i>
+              <span>10</span>
+            </button>
+          </div>
+
+          <!-- Reply box (collapsible) -->
+          <div class="reply-box" *ngIf="showReplyFor === publication._id">
+            <div class="avatar-sm reply-avatar">
+              <img src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image" />
+              <img src="assets/user.png" *ngIf="!identity.image" />
+            </div>
+            <textarea class="reply-input" placeholder="Write a reply..." rows="1"></textarea>
+          </div>
+
         </div>
+      </div>
+
+      <div class="text-center" *ngIf="publications && publications.length && !noMore">
+        <button class="see-more-btn" (click)="viewMore()">See more posts</button>
+      </div>
+
     </div>
+  </div>
 </div>
-
-

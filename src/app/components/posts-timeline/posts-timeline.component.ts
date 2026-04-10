@@ -73,6 +73,7 @@ export class PostsTimelineComponent implements OnInit {
   }
 
   public noMore = false;
+  public showReplyFor: string | null = null;
 
   viewMore() {
       this.page += 1;
