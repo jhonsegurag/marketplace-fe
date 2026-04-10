@@ -1,0 +1,53 @@
+<div class="posts-jobs-container px-5">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+  <!-- Filter bar -->
+  <div id="jobs">
+  <div class="filter-bar">
+    <button
+      class="filter-pill"
+      [class.active]="activeFilter === filter"
+      *ngFor="let filter of filters"
+      (click)="setFilter(filter)"
+    >
+      {{filter}}
+    </button>
+  </div>
+
+  <!-- Job cards -->
+  <div class="job-card" *ngFor="let job of filteredJobs">
+
+    <div class="company-logo">
+      {{job.initial}}
+    </div>
+
+    <div class="job-details">
+      <div class="job-title">{{job.title}}</div>
+      <div class="job-meta">
+        <span class="job-company">{{job.company}}</span>
+        <span class="meta-dot">·</span>
+        <span class="job-location">{{job.location}}</span>
+      </div>
+      <div class="job-tags">
+        <span class="job-type-pill">{{job.type}}</span>
+        <span class="job-salary">{{job.salary}}</span>
+      </div>
+      <div class="job-posted">{{job.posted}}</div>
+    </div>
+
+    <div class="job-action">
+      <button class="btn-apply">Apply</button>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="filteredJobs.length === 0">
+    <i class="bi bi-briefcase empty-icon"></i>
+    <p class="empty-text">No jobs found for this filter.</p>
+  </div>
+
+    </div>
+  </div>
+</div>

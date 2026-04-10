@@ -8,6 +8,7 @@ import { TimelinePageComponent } from './pages/timeline/timeline-page.component'
 import { ProfilePageComponent } from './pages/profile/profile-page.component';
 import { PeoplePageComponent } from './pages/people/people-page.component';
 import { ChatPageComponent } from './pages/chat/chat-page.component';
+import { JobsPageComponent } from './pages/jobs/jobs-page.component';
 
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UsersComponent } from './components/users/users.component';
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     {path: 'profile-update', component: ProfileUpdatePageComponent, canActivate:[UserGuard]},
     {path: 'people', component: PeoplePageComponent, canActivate:[UserGuard]},
     {path: 'chat', component: ChatPageComponent, canActivate:[UserGuard]},
+    {path: 'jobs', component: JobsPageComponent, canActivate:[UserGuard]},
 
 
     {path: 'mis-datos', component: UserEditComponent, canActivate:[UserGuard]},

@@ -18,6 +18,7 @@ import { ProfilePageComponent } from './pages/profile/profile-page.component';
 import { ProfileUpdatePageComponent } from './pages/profile-update/profile-update-page.component';
 import { PeoplePageComponent } from './pages/people/people-page.component';
 import { ChatPageComponent } from './pages/chat/chat-page.component';
+import { JobsPageComponent } from './pages/jobs/jobs-page.component';
 
 
 // Components
@@ -40,6 +41,7 @@ import { PostsTimelineComponent } from './components/posts-timeline/posts-timeli
 import { PostsPublishComponent } from './components/posts-publish/posts-publish.component';
 import { PostsProfileComponent } from './components/posts-profile/posts-profile.component';
 import { PostsPeopleComponent } from './components/posts-people/posts-people.component';
+import { PostsJobsComponent } from './components/posts-jobs/posts-jobs.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -65,6 +67,8 @@ import {UserGuard} from './services/user.guard';
     ProfilePageComponent,
     PeoplePageComponent,
     ChatPageComponent,
+    JobsPageComponent,
+    PostsJobsComponent,
 
     AboutUsComponent,
     FeaturesComponent,
