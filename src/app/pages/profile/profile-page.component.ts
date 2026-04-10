@@ -9,6 +9,7 @@ import {GLOBAL} from '../../services/global';
 @Component({
     selector: 'profile',
     templateUrl: './profile-page.component.html',
+    styleUrl: './profile-page.component.css',
     providers: [UserService, FollowService]
 })
 export class ProfilePageComponent implements OnInit {

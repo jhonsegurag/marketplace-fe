@@ -11,12 +11,12 @@
 }
 
 .cover-band {
-  height: 80px;
+  height: 120px;
   background: linear-gradient(135deg, #593EFF 0%, #8B72FF 100%);
 }
 
 .profile-body {
-  padding: 0 24px 20px;
+  padding: 0 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +24,8 @@
 }
 
 .avatar-wrapper {
-  width: 76px;
-  height: 76px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
   border: 3px solid var(--surface-card);
   overflow: hidden;
