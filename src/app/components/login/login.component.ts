@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this._userService.signup(this.user).subscribe(
           response => {
               this.identity = response.user;
-              if (!this.identity || !this.identity._id) {
+              if (!this.identity || !this.identity.id) {
                   this.status = 'error';
               } else {
                   this.status = 'success';

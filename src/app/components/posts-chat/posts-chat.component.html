@@ -1,0 +1,85 @@
+<div class="chat-container">
+
+
+
+  <!-- Left: Conversation list -->
+  <div class="chat-list-panel">
+
+    <div class="list-header">
+      <h6 class="list-title">Messages</h6>
+    </div>
+
+    <div class="search-bar">
+      <i class="bi bi-search search-icon"></i>
+      <input class="search-input" type="text" placeholder="Find a conversation..." />
+    </div>
+
+    <div
+      class="conversation-row"
+      *ngFor="let conv of conversations"
+      [class.active]="activeConversation?.id === conv.id"
+      (click)="selectConversation(conv)"
+    >
+      <div class="conv-avatar">
+        {{conv.initial}}
+        <span class="online-dot" *ngIf="conv.online"></span>
+      </div>
+      <div class="conv-info">
+        <div class="conv-name">{{conv.name}}</div>
+        <div class="conv-preview">{{conv.lastMessage}}</div>
+      </div>
+      <div class="conv-meta">
+        <span class="conv-time">{{conv.time}}</span>
+        <span class="conv-unread" *ngIf="conv.unread > 0">{{conv.unread}}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right: Message thread -->
+  <div class="chat-thread-panel">
+
+    <!-- Thread header -->
+    <div class="thread-header">
+      <div class="thread-avatar">{{activeConversation?.initial}}</div>
+      <div class="thread-info">
+        <div class="thread-name">{{activeConversation?.name}}</div>
+        <div class="thread-status" *ngIf="activeConversation?.online">
+          <span class="status-dot"></span> Online
+        </div>
+        <div class="thread-status offline" *ngIf="!activeConversation?.online">
+          Offline
+        </div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="thread-messages">
+      <div
+        class="message-row"
+        *ngFor="let msg of messages"
+        [class.sent]="msg.sent"
+        [class.received]="!msg.sent"
+      >
+        <div class="bubble">{{msg.text}}</div>
+        <div class="msg-time">{{msg.time}}</div>
+      </div>
+    </div>
+
+    <!-- Compose bar -->
+    <div class="compose-bar">
+      <textarea
+        class="compose-input"
+        [(ngModel)]="newMessage"
+        placeholder="Write a message..."
+        rows="1"
+        (keydown)="onKeydown($event)"
+      ></textarea>
+      <button class="btn-send" (click)="sendMessage()" [disabled]="!newMessage.trim()">
+        <i class="bi bi-send"></i>
+      </button>
+    </div>
+
+  </div>
+
+</div>

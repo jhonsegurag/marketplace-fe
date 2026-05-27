@@ -42,6 +42,7 @@ import { PostsPublishComponent } from './components/posts-publish/posts-publish.
 import { PostsProfileComponent } from './components/posts-profile/posts-profile.component';
 import { PostsPeopleComponent } from './components/posts-people/posts-people.component';
 import { PostsJobsComponent } from './components/posts-jobs/posts-jobs.component';
+import { PostsChatComponent } from './components/posts-chat/posts-chat.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -69,6 +70,7 @@ import {UserGuard} from './services/user.guard';
     ChatPageComponent,
     JobsPageComponent,
     PostsJobsComponent,
+    PostsChatComponent,
 
     AboutUsComponent,
     FeaturesComponent,
