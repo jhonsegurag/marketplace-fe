@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   nameSocialNetwork: 'Social Network',
-  apiUrl: 'https://social-backend-d6f6.onrender.com/api/',
+  apiUrl: 'http://2.25.134.57:3000/',
 };
